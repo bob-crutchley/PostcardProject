@@ -1,0 +1,86 @@
+<html>
+
+ <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  
+  <style> body{ background-color:  #83c957; }
+</style>
+
+<head>
+<link rel="stylesheet" href="postcard.css">
+<script>
+function request(){
+	console.log("Showing All");
+	const Http = new XMLHttpRequest();
+	const url='http://localhost:9002/ShowAll';
+	Http.open("GET", url);
+	Http.onreadystatechange = function(e){
+		data=JSON.parse(Http.responseText);
+		data.forEach(function(item){
+			var country=document.createElement("div");
+			var username=document.createElement("div");
+			var cardid=document.createElement("div");
+			var rating=document.createElement("div");
+			var category=document.createElement("div");
+			var space=document.createElement("br");
+			country.innerHTML=item.country;
+			username.innerHTML=item.username;
+			cardid.innerHTML=item.cardid;
+			rating.innerHTML=item.rating;
+			category.innerHTML=item.category;
+			document.body.appendChild(country);
+			document.body.appendChild(username);
+			document.body.appendChild(cardid);
+			document.body.appendChild(rating);
+			document.body.appendChild(category);
+			document.body.appendChild(space)
+		});
+	}
+	Http.send();
+}
+function request2(){
+	console.log("Finding By Card-ID");
+	const Http = new XMLHttpRequest();
+	const url='http://localhost:9002/ShowCardid';
+	Http.open("GET", url);
+	Http.onreadystatechange = function(e){
+		data=JSON.parse(Http.responseText);
+		data.forEach(function(item){
+			var country=document.createElement("div");
+			var username=document.createElement("div");
+			var cardid=document.createElement("div");
+			var rating=document.createElement("div");
+			var category=document.createElement("div");
+			var space=document.createElement("br");
+			country.innerHTML=item.country;
+			username.innerHTML=item.username;
+			cardid.innerHTML=item.cardid;
+			rating.innerHTML=item.rating;
+			category.innerHTML=item.category;
+			document.body.appendChild(country);
+			document.body.appendChild(username);
+			document.body.appendChild(cardid);
+			document.body.appendChild(rating);
+			document.body.appendChild(category);
+			document.body.appendChild(space)
+		});
+	}
+	Http.send();
+}
+</script>
+<h1><center>Postcard Hoster</center></h1>
+</head>
+
+<body>
+<h2><center><h2>
+<input class="btn btn-success" value="Show All Postcards" onclick="request()">
+<form method="Post" onsubmit="return request2()">
+Card ID:<input type="text" value="Enter ID" id="cardid" name="cardid">
+<input type="submit" class="btn btn-success" value="Show Card"></center>
+</form>
+</body>
+
+</html>
