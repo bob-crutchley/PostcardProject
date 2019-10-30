@@ -46,7 +46,7 @@ function request2(form) {
     
     console.log("Finding By Card-ID");
     const Http = new XMLHttpRequest();
-    const url = 'http://'+location.host+'9002/ShowCardid/' + form.cardid.value;
+    const url = 'http://'+location.host+':9002/ShowCardid/' + form.cardid.value;
     Http.open("GET", url);
     Http.onload = function (e) {
         data = JSON.parse(Http.responseText);
