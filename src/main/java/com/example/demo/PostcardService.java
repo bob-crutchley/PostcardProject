@@ -12,9 +12,9 @@ public class PostcardService {
 	private PostcardRepo repo;
 	
 	
-public String AddNewPostcard(String C, String U, int Card, int R, String Cat) {
-	Postcardtable ref=new Postcardtable(C, U, Card, R, Cat);
-	repo.save(ref);
+public String AddNewPostcard(Postcardtable pc) {
+	
+	repo.save(pc);
 	return "New Card Added!";
 	}
 public String DeletePostcard(int Card) {

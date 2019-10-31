@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -57,9 +58,9 @@ public class DBFController {
 	}
 	@Autowired
 	private PostcardService cards;
-	@RequestMapping(method=RequestMethod.POST, value="/AddNewPostcard/{C}/{U}/{Card}/{R}/{Cat}")
-	public String AddNewPostcard(@PathVariable String C, @PathVariable String U, @PathVariable int Card, @PathVariable int R, @PathVariable String Cat) {
-		return cards.AddNewPostcard(C, U, Card, R, Cat);
+	@RequestMapping(method=RequestMethod.POST, value="/AddNewPostcard/")
+	public String AddNewPostcard(@RequestBody Postcardtable pc) {
+		return cards.AddNewPostcard(pc);
 	}
 	@RequestMapping(method=RequestMethod.DELETE, value="/DeletePostcard/{Card}")
 	public String DeletePostcard(@PathVariable int Card) {

@@ -19,12 +19,28 @@
 <body>
 	<h1><center>Postcard Hoster</center></h1>
 <center>
+<span id="add">
+  Country: <input id="country" type="text">
+  Username: <input id="username" type="text">
+  Card ID: <input id="cardid" type="text">
+  Rating: <input id="rating" type="text">
+  Category: <input id="category" type="text">
+  <input type="button"value="submit" onclick="request3()">
+</span><br>
 <input class="btn btn-success" value="Show All Postcards" onclick="request()">
 <form method="Post" onsubmit="return request2(this)">
 Card ID:<input type="text" value="Enter ID" id="cardid" name="cardid">
-<input type="submit" class="btn btn-success" value="Show Card"></center>
+<input type="submit" class="btn btn-success" value="Show Card">
 </form>
-
+<form method="Delete" onsubmit="return request4(this)">
+    Card ID:<input type="text" value="Enter ID" id="cardid" name="cardid">
+    <input type="submit" class="btn btn-success" value="Delete Card">
+    </form>
+    <form method="Put" onsubmit="return request5(this)">
+        Card ID:<input type="text" value="Enter ID" id="cardid" name="cardid">
+        New Rating:<input type="text" value="New Rating" id="rating" name="rating">
+        <input type="submit" class="btn btn-success" value="Update Rating"></center>
+        </form>
 <div id="postcards">
 
 </div>
