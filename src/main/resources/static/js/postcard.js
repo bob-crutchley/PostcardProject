@@ -1,7 +1,7 @@
  function request() {
     console.log("Showing All");
     const Http = new XMLHttpRequest();
-    const url = 'http://localhost:9002/ShowAll';
+    const url = 'http://'+location.hostname+':9002/ShowAll';
     Http.open("GET", url);
     Http.onload = function (e) {
         data = JSON.parse(Http.response);
@@ -46,7 +46,7 @@ function request2(form) {
     
     console.log("Finding By Card-ID");
     const Http = new XMLHttpRequest();
-    const url = 'http://localhost:9002/ShowCardid/' + form.cardid.value;
+    const url = 'http://'+location.hostname+':9002/ShowCardid/' + form.cardid.value;
     Http.open("GET", url);
     Http.onload = function (e) {
         data = JSON.parse(Http.responseText);
@@ -63,21 +63,21 @@ function request3(){
     let rating = document.getElementById("rating").value;
     let category = document.getElementById("category").value;
     const Http = new XMLHttpRequest();
-    const url = 'http://localhost:9002/AddNewPostcard/';
+    const url = 'http://'+location.hostname+':9002/AddNewPostcard/';
     Http.open("POST", url);
     Http.setRequestHeader("Content-Type", "application/json");
     Http.send(JSON.stringify({"country":country, "username":username, "cardid":cardid, "rating":rating, "category":category}));
 }
 function request4(form){
     const Http = new XMLHttpRequest();
-    const url = 'http://localhost:9002/DeletePostcard/' + form.cardid.value;
+    const url = 'http://'+location.hostname+':9002/DeletePostcard/' + form.cardid.value;
     Http.open("DELETE", url);
     Http.send();
     return false;
 }
 function request5(form){
     const Http = new XMLHttpRequest();
-    const url = 'http://localhost:9002/UpdateRating/' + form.cardid.value + "/"+ form.rating.value;
+    const url = 'http://'+location.hostname+':9002/UpdateRating/' + form.cardid.value + "/"+ form.rating.value;
     Http.open("Put", url);
     Http.send();
     return false;
