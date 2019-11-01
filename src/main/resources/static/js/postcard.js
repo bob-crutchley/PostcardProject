@@ -66,7 +66,6 @@ function request3(){
     const url = 'http://'+location.hostname+':9002/AddNewPostcard/';
     Http.open("POST", url);
     Http.setRequestHeader("Content-Type", "application/json");
-    Http.setRequestHeader('Access-Control-Allow-Origin', '*');
     Http.send(JSON.stringify({"country":country, "username":username, "cardid":cardid, "rating":rating, "category":category}));
 }
 function request4(form){
