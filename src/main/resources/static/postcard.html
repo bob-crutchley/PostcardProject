@@ -23,25 +23,25 @@ background-size: auto, auto, auto, cover;
   <br>
 <center>
 <span id="add">
- Country: <input id="country" type="text">
- Username: <input id="username" type="text">
- Card ID: <input id="cardid" type="text">
- Rating: <input id="rating" type="text">
- Category: <input id="category" type="text">
+ Country: <input id="country" type="text" value="Enter Country" onfocus="this.value=''">
+ Username: <input id="username" type="text" value="Enter Username" onfocus="this.value=''">
+ Card ID: <input id="cardid" type="text" value="Enter Card-ID" onfocus="this.value=''">
+ Rating: <input id="rating" type="text" value="Enter Rating" onfocus="this.value=''">
+ Category: <input id="category" type="text" value="Enter Category" onfocus="this.value=''">
   <input class="btn btn-success"value="Add New Card" onclick="request3()">
 </span><br><br>
 <input class="btn btn-success" value="Show All Postcards" onclick="request()"><br><br>
 <form method="Post" onsubmit="return request2(this)">
-Card ID:<input type="text" value="Enter ID" id="cardid" name="cardid">
+Card ID:<input type="text" value="Enter ID" id="cardid" name="cardid" onfocus="this.value=''">
 <input type="submit" class="btn btn-success" value="Show Card">
 </form><br>
 <form method="Delete" onsubmit="return request4(this)">
-    Card ID:<input type="text" value="Enter ID" id="cardid" name="cardid">
+    Card ID:<input type="text" value="Enter ID" id="cardid" name="cardid" onfocus="this.value=''">
     <input type="submit" class="btn btn-success" value="Delete Card">
     </form><br>
     <form method="Put" onsubmit="return request5(this)">
-        Card ID:<input type="text" value="Enter ID" id="cardid" name="cardid">
-        New Rating:<input type="text" value="New Rating" id="rating" name="rating">
+        Card ID:<input type="text" value="Enter ID" id="cardid" name="cardid" onfocus="this.value=''">
+        New Rating:<input type="text" value="New Rating" id="rating" name="rating" onfocus="this.value=''">
         <input type="submit" class="btn btn-success" value="Update Rating"></center>
         </form><br>
 <div id="postcards">
