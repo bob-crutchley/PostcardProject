@@ -28,6 +28,8 @@ The application will now be accessible on https://default-website-postcard.uksou
 
 This will be different if you have changed the `domain_name_suffix` in the `main.tf` file or are using a different Terraform workspace.
 
+If you have reached the weekly limit for Let's Encrypt Certificate signings then you can change these to allow to create more.
+
 #### Cleaning up
 The infrastructure can be destroyed using:
 ```bash
