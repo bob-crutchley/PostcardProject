@@ -6,11 +6,18 @@ import javax.persistence.Id;
 @Entity
 public class Postcardtable {
 	@Id
+    @GeneratedValue
+    @Column
     private Long id;
+    @Column
 	private String country;
+    @Column
 	private String username;
+    @Column
 	private int cardid;
+    @Column
 	private int rating;
+    @Column
 	private String category;
 	
 	public String getCountry() {
