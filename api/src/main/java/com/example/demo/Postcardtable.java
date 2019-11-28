@@ -6,6 +6,7 @@ import javax.persistence.Id;
 @Entity
 public class Postcardtable {
 	@Id
+    private Long id;
 	private String country;
 	private String username;
 	private int cardid;
@@ -43,7 +44,8 @@ public class Postcardtable {
 		this.category = category;
 	}
 	
-	public Postcardtable(String country, String username, int cardid, int rating, String category) {
+	public Postcardtable(Long id, String country, String username, int cardid, int rating, String category) {
+        this.id = id;
 		this.country = country;
 		this.username = username;
 		this.cardid = cardid;
