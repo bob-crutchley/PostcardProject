@@ -16,7 +16,7 @@ module "website" {
   resource_group = azurerm_resource_group.default
   virtual_network = azurerm_virtual_network.default
   subnet_cidr = "10.0.1.0/24"
-  domain_name_suffix = "bob-crutchley"
+  domain_name_suffix = "postcard"
 }
 
 module "api" {
@@ -25,7 +25,7 @@ module "api" {
   resource_group = azurerm_resource_group.default
   virtual_network = azurerm_virtual_network.default
   subnet_cidr = "10.0.2.0/24"
-  domain_name_suffix = "bob-crutchley"
+  domain_name_suffix = "postcard"
 }
 
 module "database" {
