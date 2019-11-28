@@ -7,7 +7,7 @@ else
 fi
 
 RESOURCE_GROUP_NAME=tfstate
-STORAGE_ACCOUNT_NAME=tfstate$(date +%s) CONTAINER_NAME=tfstate
+STORAGE_ACCOUNT_NAME=postcardtfstate$(date +%s) CONTAINER_NAME=tfstate
 EXISTING_RESOURCE_GROUP_NAME=$(az group list --query "[?name=='tfstate'] | [0].name" -o tsv)
 if [ -z "$EXISTING_RESOURCE_GROUP_NAME" ]; then
     az group create --name $RESOURCE_GROUP_NAME --location uksouth
