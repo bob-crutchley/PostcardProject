@@ -6,7 +6,7 @@ else
     exit 1
 fi
 
-RESOURCE_GROUP_NAME=tfstate
+RESOURCE_GROUP_NAME=postcardtfstate
 STORAGE_ACCOUNT_NAME=postcardtfstate$(date +%s) CONTAINER_NAME=tfstate
 EXISTING_RESOURCE_GROUP_NAME=$(az group list --query "[?name=='tfstate'] | [0].name" -o tsv)
 if [ -z "$EXISTING_RESOURCE_GROUP_NAME" ]; then
