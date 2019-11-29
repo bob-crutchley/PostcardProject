@@ -2,10 +2,6 @@
 - hosts: all
   become: true
   tasks:
-  - name: certbot dependency repo
-    apt_repository:
-      repo: "deb http://deb.debian.org/debian stretch-backports main"
-      state: present
   - name: install apt dependencies
     apt:
       name:
@@ -13,7 +9,6 @@
         - python-certbot-nginx
         - git
         - nginx
-      default_release: stretch-backports
       state: latest
       update_cache: true
   - name: nginx service running
