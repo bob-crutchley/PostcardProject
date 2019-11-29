@@ -1,10 +1,5 @@
 # Postcard
-
-### Setup Guide
-This application can be deployed on Azure with the following steps.
-
-Prerequisites:
-- Terraform installed
+### Setup Guide This application can be deployed on Azure with the following steps.  Prerequisites: - Terraform installed
 - Azure CLI installed and authenticated with `az login`
 
 #### Initialise the Project
@@ -19,6 +14,13 @@ Terraform apply can be used to create the infrastructure:
 terraform apply
 ```
 #### Configure the Virtual Machines
+You first need to configure the following envinronment variables:
+```bash
+export MYSQL_ROOT_PASSWORD="xxxx"
+export MYSQL_USER="xxxx"
+export MYSQL_PASSWORD="xxxx"
+export MYSQL_DATABASE="xxxx"
+```
 The application stack can now be installed using Ansible:
 ```bash
 ./run-playbooks.sh
